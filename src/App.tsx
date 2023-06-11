@@ -76,13 +76,12 @@ const App:FC=()=> {
                                       <div
                                           onClick={()=>{
                                               setCompleted(el?.todo?el.todo:"")
-                                              console.log(el?.completed)
                                           }}
 
                                           className="todos__items">
                                           <div className="todos__items__todos">
                                               <div className="round">
-                                                  <input type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                  <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
                                                   <label htmlFor="checkbox"></label>
                                               </div>
                                               <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
@@ -99,13 +98,12 @@ const App:FC=()=> {
                                           <div
                                               onClick={()=>{
                                                   setCompleted(el?.todo?el.todo:"")
-                                                  console.log(el?.completed)
                                               }}
 
                                               className="todos__items">
                                               <div className="todos__items__todos">
                                                   <div className="round">
-                                                      <input type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                      <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
                                                       <label htmlFor="checkbox"></label>
                                                   </div>
                                                   <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
@@ -118,19 +116,18 @@ const App:FC=()=> {
                           }
 
                           {
-                              SortTodo==="Completed"&&todos.map(el=>{
+                              SortTodo==="Completed"&&todos.map((el,index)=>{
                                   if (el?.completed){
                                       return(
                                           <div
+                                              key={index}
                                               onClick={()=>{
                                                   setCompleted(el?.todo?el.todo:"")
-                                                  console.log(el?.completed)
                                               }}
-
                                               className="todos__items">
                                               <div className="todos__items__todos">
                                                   <div className="round">
-                                                      <input type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                      <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
                                                       <label htmlFor="checkbox"></label>
                                                   </div>
                                                   <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
