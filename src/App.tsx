@@ -81,7 +81,9 @@ const App:FC=()=> {
                                           className="todos__items">
                                           <div className="todos__items__todos">
                                               <div className="round">
-                                                  <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                  <input onChange={()=>{
+                                                      setCompleted(el?.todo?el.todo:"")
+                                                  }} data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
                                                   <label htmlFor="checkbox"></label>
                                               </div>
                                               <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
@@ -103,7 +105,9 @@ const App:FC=()=> {
                                               className="todos__items">
                                               <div className="todos__items__todos">
                                                   <div className="round">
-                                                      <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                      <input onChange={()=>{
+                                                          setCompleted(el?.todo?el.todo:"")
+                                                      }} data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
                                                       <label htmlFor="checkbox"></label>
                                                   </div>
                                                   <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
@@ -127,8 +131,10 @@ const App:FC=()=> {
                                               className="todos__items">
                                               <div className="todos__items__todos">
                                                   <div className="round">
-                                                      <input data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
-                                                      <label htmlFor="checkbox"></label>
+                                                      <input onChange={()=>{
+                                                          setCompleted(el?.todo?el.todo:"")
+                                                      }}  data-testid="checkbox" type="checkbox" checked={el?.completed} id="checkbox"/>
+                                                      <label  htmlFor="checkbox"></label>
                                                   </div>
                                                   <div className={`todos__text ${el?.completed&&"completed"}`}>{el?.todo}</div>
                                               </div>
